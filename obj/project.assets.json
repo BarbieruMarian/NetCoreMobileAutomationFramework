@@ -7503,11 +7503,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Programming\\NetCoreMobileAutomation\\AppiumFramework\\AppiumFramework.csproj",
+      "projectUniqueName": "F:\\Programming\\NetCoreMobileAutomation\\try\\NetCoreMobileAutomationFramework\\AppiumFramework.csproj",
       "projectName": "AppiumFramework",
-      "projectPath": "F:\\Programming\\NetCoreMobileAutomation\\AppiumFramework\\AppiumFramework.csproj",
+      "projectPath": "F:\\Programming\\NetCoreMobileAutomation\\try\\NetCoreMobileAutomationFramework\\AppiumFramework.csproj",
       "packagesPath": "C:\\Users\\barbi\\.nuget\\packages\\",
-      "outputPath": "F:\\Programming\\NetCoreMobileAutomation\\AppiumFramework\\obj\\",
+      "outputPath": "F:\\Programming\\NetCoreMobileAutomation\\try\\NetCoreMobileAutomationFramework\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",

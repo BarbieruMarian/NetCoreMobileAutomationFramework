@@ -7529,11 +7529,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Programming\\NetCoreMobileAutomation\\AppiumFramework\\Flutters\\Flutters.csproj",
+      "projectUniqueName": "F:\\Programming\\NetCoreMobileAutomation\\try\\NetCoreMobileAutomationFramework\\Flutters\\Flutters.csproj",
       "projectName": "Flutters",
-      "projectPath": "F:\\Programming\\NetCoreMobileAutomation\\AppiumFramework\\Flutters\\Flutters.csproj",
+      "projectPath": "F:\\Programming\\NetCoreMobileAutomation\\try\\NetCoreMobileAutomationFramework\\Flutters\\Flutters.csproj",
       "packagesPath": "C:\\Users\\barbi\\.nuget\\packages\\",
-      "outputPath": "F:\\Programming\\NetCoreMobileAutomation\\AppiumFramework\\Flutters\\obj\\",
+      "outputPath": "F:\\Programming\\NetCoreMobileAutomation\\try\\NetCoreMobileAutomationFramework\\Flutters\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -7554,8 +7554,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "F:\\Programming\\NetCoreMobileAutomation\\AppiumFramework\\AppiumFramework.csproj": {
-              "projectPath": "F:\\Programming\\NetCoreMobileAutomation\\AppiumFramework\\AppiumFramework.csproj"
+            "F:\\Programming\\NetCoreMobileAutomation\\try\\NetCoreMobileAutomationFramework\\AppiumFramework.csproj": {
+              "projectPath": "F:\\Programming\\NetCoreMobileAutomation\\try\\NetCoreMobileAutomationFramework\\AppiumFramework.csproj"
             }
           }
         }
