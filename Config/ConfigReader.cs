@@ -5,7 +5,7 @@ namespace AppiumFramework.Config
 {
     public class ConfigReader
     {
-        public static void InitializeSettings()
+        public static void InitializeSettings(string jsonSection)
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
@@ -13,11 +13,13 @@ namespace AppiumFramework.Config
 
             IConfigurationRoot configurationRoot = builder.Build();
 
-            Settings.PlatformName = configurationRoot.GetSection("testSettings").Get<TestSettings>().PlatformName;
-            Settings.DeviceName = configurationRoot.GetSection("testSettings").Get<TestSettings>().DeviceName;
-            Settings.AppPath = configurationRoot.GetSection("testSettings").Get<TestSettings>().AppPath;
-            Settings.AppPackage = configurationRoot.GetSection("testSettings").Get<TestSettings>().AppPackage;
-            Settings.AppActivity = configurationRoot.GetSection("testSettings").Get<TestSettings>().AppActivity;
+            Settings.PlatformName = configurationRoot.GetSection(jsonSection).Get<TestSettings>().PlatformName;
+            Settings.DeviceName = configurationRoot.GetSection(jsonSection).Get<TestSettings>().DeviceName;
+            Settings.AppPath = configurationRoot.GetSection(jsonSection).Get<TestSettings>().AppPath;
+            Settings.AppPackage = configurationRoot.GetSection(jsonSection).Get<TestSettings>().AppPackage;
+            Settings.AppActivity = configurationRoot.GetSection(jsonSection).Get<TestSettings>().AppActivity;
+            Settings.AuthSecret = configurationRoot.GetSection(jsonSection).Get<TestSettings>().AuthSecret;
+            Settings.BasePath = configurationRoot.GetSection(jsonSection).Get<TestSettings>().BasePath;
         }
     }
 }

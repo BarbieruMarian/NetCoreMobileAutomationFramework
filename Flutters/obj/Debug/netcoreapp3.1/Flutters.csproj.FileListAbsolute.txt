@@ -254,11 +254,11 @@ F:\Programming\NetCoreMobileAutomation\AppiumFramework\Flutters\obj\Debug\netcor
 F:\Programming\NetCoreMobileAutomation\AppiumFramework\Flutters\obj\Debug\netcoreapp3.1\Flutters.csproj.CopyComplete
 F:\Programming\NetCoreMobileAutomation\AppiumFramework\Flutters\obj\Debug\netcoreapp3.1\Flutters.dll
 F:\Programming\NetCoreMobileAutomation\AppiumFramework\Flutters\obj\Debug\netcoreapp3.1\Flutters.pdb
+F:\Programming\NetCoreMobileAutomation\try\NetCoreMobileAutomationFramework\Flutters\bin\Debug\netcoreapp3.1\TechTalk.SpecFlow.NUnit.SpecFlowPlugin.dll
 F:\Programming\NetCoreMobileAutomation\try\NetCoreMobileAutomationFramework\Flutters\bin\Debug\netcoreapp3.1\NUnit3.TestAdapter.dll
 F:\Programming\NetCoreMobileAutomation\try\NetCoreMobileAutomationFramework\Flutters\bin\Debug\netcoreapp3.1\NUnit3.TestAdapter.pdb
 F:\Programming\NetCoreMobileAutomation\try\NetCoreMobileAutomationFramework\Flutters\bin\Debug\netcoreapp3.1\nunit.engine.dll
 F:\Programming\NetCoreMobileAutomation\try\NetCoreMobileAutomationFramework\Flutters\bin\Debug\netcoreapp3.1\nunit.engine.api.dll
-F:\Programming\NetCoreMobileAutomation\try\NetCoreMobileAutomationFramework\Flutters\bin\Debug\netcoreapp3.1\TechTalk.SpecFlow.NUnit.SpecFlowPlugin.dll
 F:\Programming\NetCoreMobileAutomation\try\NetCoreMobileAutomationFramework\Flutters\bin\Debug\netcoreapp3.1\appsettings.json
 F:\Programming\NetCoreMobileAutomation\try\NetCoreMobileAutomationFramework\Flutters\bin\Debug\netcoreapp3.1\Flutters.deps.json
 F:\Programming\NetCoreMobileAutomation\try\NetCoreMobileAutomationFramework\Flutters\bin\Debug\netcoreapp3.1\Flutters.runtimeconfig.json
@@ -382,3 +382,9 @@ F:\Programming\NetCoreMobileAutomation\try\NetCoreMobileAutomationFramework\Flut
 F:\Programming\NetCoreMobileAutomation\try\NetCoreMobileAutomationFramework\Flutters\obj\Debug\netcoreapp3.1\Flutters.csproj.CopyComplete
 F:\Programming\NetCoreMobileAutomation\try\NetCoreMobileAutomationFramework\Flutters\obj\Debug\netcoreapp3.1\Flutters.dll
 F:\Programming\NetCoreMobileAutomation\try\NetCoreMobileAutomationFramework\Flutters\obj\Debug\netcoreapp3.1\Flutters.pdb
+F:\Programming\NetCoreMobileAutomation\try\NetCoreMobileAutomationFramework\Flutters\bin\Debug\netcoreapp3.1\FireSharp.dll
+F:\Programming\NetCoreMobileAutomation\try\NetCoreMobileAutomationFramework\Flutters\bin\Debug\netcoreapp3.1\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+F:\Programming\NetCoreMobileAutomation\try\NetCoreMobileAutomationFramework\Flutters\bin\Debug\netcoreapp3.1\Microsoft.Threading.Tasks.Extensions.dll
+F:\Programming\NetCoreMobileAutomation\try\NetCoreMobileAutomationFramework\Flutters\bin\Debug\netcoreapp3.1\Microsoft.Threading.Tasks.dll
+F:\Programming\NetCoreMobileAutomation\try\NetCoreMobileAutomationFramework\Flutters\bin\Debug\netcoreapp3.1\System.Net.Http.Extensions.dll
+F:\Programming\NetCoreMobileAutomation\try\NetCoreMobileAutomationFramework\Flutters\bin\Debug\netcoreapp3.1\System.Net.Http.Primitives.dll

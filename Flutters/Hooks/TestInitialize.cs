@@ -12,7 +12,7 @@ namespace Flutters.Hooks
         [BeforeScenario]
         public void InitializeTest()
         {     
-            ConfigReader.InitializeSettings();
+            ConfigReader.InitializeSettings("SqlBranch");
             DriverFactory.Instance.InitializeAndroidApp<AppiumDriver<AppiumWebElement>>();
         }
 

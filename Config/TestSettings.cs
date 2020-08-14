@@ -21,5 +21,11 @@ namespace AppiumFramework.Config
 
         [JsonProperty("appActivity")]
         public string AppActivity { get; set; }
+
+        [JsonProperty("authSecret")]
+        public string AuthSecret { get; set; }
+
+        [JsonProperty("basePath")]
+        public string BasePath { get; set; }
     }
 }
