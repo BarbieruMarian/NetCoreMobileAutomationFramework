@@ -1,5 +1,8 @@
 ﻿using Flutters.Base;
 using OpenQA.Selenium.Appium;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Threading;
 
 namespace Flutters.Pages
 {
@@ -10,11 +13,18 @@ namespace Flutters.Pages
         AppiumWebElement GoBack => AppiumDriver.FindElementById("‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‏‎‎‏‎‎‎‎‏‏‏‏‏‎‏‏‎‏‏‎‎‎‎‏‏‏‏‏‏‏‎‏‏‏‏‏‎‏‎‎‏‏‎‏‎‎‎‎‎‏‏‏‎‏‎‎‎‎‎‏‏‎‏‏‎‎‏‎‏‎‏‏‏‏‏‎‎Navigate up‎");
         AppiumWebElement CameraUpload => AppiumDriver.FindElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.FrameLayout/android.widget.ListView/android.widget.TextView[1]");
         AppiumWebElement GaleryUpload => AppiumDriver.FindElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.FrameLayout/android.widget.ListView/android.widget.TextView[2]");
-        AppiumWebElement ConfirmUpload => AppiumDriver.FindElementById("com.RLD.newmemechat:id/pUploadBtn");
+        AppiumWebElement AllowGalleryAccess => AppiumDriver.FindElementById("com.android.packageinstaller:id/permission_allow_button");
+        AppiumWebElement CameraDownloadsSection => AppiumDriver.FindElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout[2]");
+        ReadOnlyCollection<AppiumWebElement> DownloadPictures => AppiumDriver.FindElementsByClassName("android.view.ViewGroup");
+        AppiumWebElement StickymanPicture => AppiumDriver.FindElementByXPath("//android.view.ViewGroup[@content-desc=\"Photo taken on Aug 15, 2020 2:01:19 PM\"]");
+        AppiumWebElement PostButton => AppiumDriver.FindElementById("com.RLD.newmemechat:id/pUploadBtn");
 
-        public void ClickParagraphTitle()
+
+        public void AddTitle()
         {
             ParagraphTitle.Click();
+            Thread.Sleep(500);
+            ParagraphTitle.SendKeys("TestTitle");  
         }
 
         public void ClickSelectImage()
@@ -27,20 +37,41 @@ namespace Flutters.Pages
             GoBack.Click();
         }
 
-        public void ClickCameraUpload()
+        public void AddPictureFromGallery()
         {
-            CameraUpload.Click();
-        }
+            ClickSelectImage();
+            Thread.Sleep(500);
 
-        public void ClickGaleryUpload()
-        {
             GaleryUpload.Click();
+            Thread.Sleep(500);
+
+            AllowGalleryAccess.Click();
+            Thread.Sleep(500);
+
+            CameraDownloadsSection.Click();
+            Thread.Sleep(500);
+
+            ClickFirstImage();
+            Thread.Sleep(500);
         }
 
-        public void ClickConfirmUpload()
+
+        public void ClickPostUploadButton()
         {
-            ConfirmUpload.Click();
+            PostButton.Click();
         }
+        public void ClickFirstImage()
+        {
+            var firstImage = GetFirstImage();
+            firstImage.Click();
+        }
+        public AppiumWebElement GetFirstImage()
+        {
+            var firstPic = DownloadPictures[0];
+            Thread.Sleep(500);
+            return firstPic;
+        }
+
 
     }
 }

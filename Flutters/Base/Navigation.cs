@@ -10,7 +10,12 @@ namespace Flutters.Base
         public AppiumWebElement ChatTab => AppiumDriver.FindElementById("com.RLD.newmemechat:id/chat");
         public AppiumWebElement ProfileTab => AppiumDriver.FindElementById("com.RLD.newmemechat:id/profile");
         public AppiumWebElement SettingsTab => AppiumDriver.FindElementById("com.RLD.newmemechat:id/settings");
+        public AppiumWebElement SendMemeButton => AppiumDriver.FindElementById("com.RLD.newmemechat:id/floatingbutton");
 
+        public void ClickSendMeme()
+        {
+            SendMemeButton.Click();
+        }
         public void ClickHome()
         {
             HomeTab.Click();
@@ -57,6 +62,13 @@ namespace Flutters.Base
             var homepageInstance = GetInstance<HomePage>();
             ClickHome();
             return homepageInstance;
+        }
+
+        internal SendMemePage GotoSendMemePage()
+        {
+            var sendMemeInstance = GetInstance<SendMemePage>();
+            ClickSendMeme();
+            return sendMemeInstance;
         }
     }
 }

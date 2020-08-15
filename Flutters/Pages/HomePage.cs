@@ -11,7 +11,6 @@ namespace Flutters.Pages
         AppiumWebElement Dislike => AppiumDriver.FindElementById("com.RLD.newmemechat:id/dwnBtn");
         AppiumWebElement Comment => AppiumDriver.FindElementById("com.RLD.newmemechat:id/comBtn");
         AppiumWebElement Share => AppiumDriver.FindElementById("com.RLD.newmemechat:id/shareBtn");
-        AppiumWebElement SendMemeButton => AppiumDriver.FindElementById("com.RLD.newmemechat:id/floatingbutton");
 
         internal SendMemePage SendMeme()
         {
