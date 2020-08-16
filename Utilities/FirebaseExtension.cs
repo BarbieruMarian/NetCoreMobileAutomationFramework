@@ -9,7 +9,6 @@ namespace AppiumFramework.Utilities
 {
     public class FirebaseExtension
     {
-
         public FirebaseClient FirebaseClient
         {
             get

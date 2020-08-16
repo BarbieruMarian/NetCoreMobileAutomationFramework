@@ -16,11 +16,11 @@ using AppiumFramework.Utilities;
 namespace Flutters.Steps
 {
     [Binding]
-    public class SendMemeSteps : FirebaseExtension
+    public class SendMemeSteps : TestStep
     {
 
-        public int PostCountBeforeTest { get; set; }
-        public int PostCountAfterTest { get; set; }
+        private int postCountBeforeTest { get; set; }
+        private int postCountAfterTest { get; set; }
         [When(@"I click the SEND MEME button")]
         public void WhenIClickTheSENDMEMEButton()
         {
@@ -32,16 +32,7 @@ namespace Flutters.Steps
         {
             PageFactory.Instance.CurrentPage.As<SendMemePage>().AddTitle();
             PageFactory.Instance.CurrentPage.As<SendMemePage>().AddPictureFromGallery();
-
-            //var calls = await FirebaseClient
-            //    .Child("Posts")
-            //    .OnceAsync<Post>();
-
-            //PostCount = calls.Count;
-
-            Task<int> task = Task.Run<int>(async () => await GetNrPosts());
-            PostCountBeforeTest = task.Result;
-
+            postCountBeforeTest = GetNumberOfPosts();
         }
 
         [When(@"I click the POST button")]
@@ -53,25 +44,9 @@ namespace Flutters.Steps
         [Then(@"the number of posts in Database Table Posts is incremented")]
         public  void ThenTheNumberOfPostsInDatabaseTablePostsIsIncremented()
         {
-
-            Task<int> task = Task.Run<int>(async () => await GetNrPosts());
-            PostCountAfterTest = task.Result;
-
-            if (PostCountAfterTest == PostCountBeforeTest + 1)
-            {
-
-            }
+            postCountAfterTest = GetNumberOfPosts();
+            if (postCountAfterTest == postCountBeforeTest + 1) { }
             else Assert.Fail("test failed");
         }
-
-        public async Task<int> GetNrPosts()
-        {
-            var calls = await FirebaseClient
-                .Child("Posts")
-                .OnceAsync<Post>();
-
-            return calls.Count;
-        }
-
     }
 }
