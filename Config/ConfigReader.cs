@@ -20,6 +20,7 @@ namespace AppiumFramework.Config
             Settings.AppActivity = configurationRoot.GetSection(jsonSection).Get<TestSettings>().AppActivity;
             Settings.AuthSecret = configurationRoot.GetSection(jsonSection).Get<TestSettings>().AuthSecret;
             Settings.BasePath = configurationRoot.GetSection(jsonSection).Get<TestSettings>().BasePath;
+            Settings.ThreadSleepMultiplicator = configurationRoot.GetSection(jsonSection).Get<TestSettings>().ThreadSleepMultiplicator;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using AppiumFramework.Base;
+using AppiumFramework.Utilities;
 using Flutters.Pages;
 using NUnit.Framework;
 using System.Threading;
@@ -21,18 +22,18 @@ namespace Flutters.Steps
         {
             for (int i = 0; i < 50; i++)
             {
-                Thread.Sleep(2000);
+                FrameworkUtilities.Sleep(1500);
 
                 PageFactory.Instance.CurrentPage = PageFactory.Instance.CurrentPage.As<SettingsPage>().GotoChatPage();
-                Thread.Sleep(2000);
+                FrameworkUtilities.Sleep(1500);
                 PageFactory.Instance.CurrentPage.As<ChatPage>().IsChatPage();
 
                 PageFactory.Instance.CurrentPage = PageFactory.Instance.CurrentPage.As<ChatPage>().GotoProfilePage();
-                Thread.Sleep(2000);
+                FrameworkUtilities.Sleep(1500);
                 PageFactory.Instance.CurrentPage.As<ProfilePage>().IsProfilePage();
 
                 PageFactory.Instance.CurrentPage = PageFactory.Instance.CurrentPage.As<ProfilePage>().GotoSettingsPage();
-                Thread.Sleep(2000);
+                FrameworkUtilities.Sleep(1500);
                 PageFactory.Instance.CurrentPage.As<SettingsPage>().IsSettingsPage();
             }
         }
@@ -40,10 +41,10 @@ namespace Flutters.Steps
         [Then(@"I go back to the Home Page")]
         public void ThenIGoBackToTheHomePage()
         {
-            Thread.Sleep(2000);
+            FrameworkUtilities.Sleep(1500);
 
             PageFactory.Instance.CurrentPage = PageFactory.Instance.CurrentPage.As<SettingsPage>().GotoHomePage();
-            Thread.Sleep(2000);
+            FrameworkUtilities.Sleep(1500);
             Assert.That(PageFactory.Instance.CurrentPage.As<HomePage>().IsHomePage, Is.True, "Hot button was not found - you are probably not on the home page");
         }
     }

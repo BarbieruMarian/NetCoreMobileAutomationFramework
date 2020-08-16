@@ -27,5 +27,7 @@ namespace AppiumFramework.Config
 
         [JsonProperty("basePath")]
         public string BasePath { get; set; }
+        [JsonProperty("threadSleepMultiplicator")]
+        public int ThreadSleepMultiplicator { get; set; }
     }
 }

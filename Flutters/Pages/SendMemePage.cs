@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System;
 using System.Collections.ObjectModel;
 using System.Threading;
+using AppiumFramework.Utilities;
 
 namespace Flutters.Pages
 {
@@ -22,9 +23,9 @@ namespace Flutters.Pages
 
         public void AddTitle()
         {
-            Thread.Sleep(2000);
+            FrameworkUtilities.Sleep(1000);
             ParagraphTitle.Click();
-            Thread.Sleep(500);
+            FrameworkUtilities.Sleep(250);
             GenerateRandomPostTitle();
             ParagraphTitle.SendKeys(PostTitle);  
         }
@@ -47,19 +48,19 @@ namespace Flutters.Pages
 
         public void AddPictureFromGallery()
         {
-            Thread.Sleep(2000);
+            FrameworkUtilities.Sleep(1000);
             ClickSelectImage();
 
-            Thread.Sleep(2000);
+            FrameworkUtilities.Sleep(1000);
             GaleryUpload.Click();
 
-            Thread.Sleep(2000);
+            FrameworkUtilities.Sleep(1000);
             AllowGalleryAccess.Click();
 
-            Thread.Sleep(2000);
+            FrameworkUtilities.Sleep(1000);
             CameraDownloadsSection.Click();
 
-            Thread.Sleep(2000);
+            FrameworkUtilities.Sleep(1000);
             ClickFirstImage();
         }
         public void ClickPostUploadButton()
@@ -69,17 +70,17 @@ namespace Flutters.Pages
 
         public void ClickFirstImage()
         {
-            Thread.Sleep(1000);
+            FrameworkUtilities.Sleep(500);
             var firstImage = GetFirstImage();
             firstImage.Click();
         }
 
         public AppiumWebElement GetFirstImage()
         {
-            Thread.Sleep(2000);
+            FrameworkUtilities.Sleep(1000);
             var firstPic = DownloadPictures[1];
 
-            Thread.Sleep(500);
+            FrameworkUtilities.Sleep(250);
             return firstPic;
         }
     }

@@ -1,4 +1,4 @@
-﻿using System.Threading;
+﻿using AppiumFramework.Utilities;
 using Flutters.Base;
 using OpenQA.Selenium.Appium;
 
@@ -31,59 +31,59 @@ namespace Flutters.Pages
 
         internal void EmailSignInWithExistingAccount(string email, string password)
         {
-            //ClickCancelPreviousUser();
+            FrameworkUtilities.Sleep(1000);
             FillEmail(email);
             ClickNextButton();
-            Thread.Sleep(1000);
+            FrameworkUtilities.Sleep(500);
             FillPassword(password);
         }
 
         internal void ClickEmailSignIn()
         {
             EmailSignIn.Click();
-            Thread.Sleep(1000);
+            FrameworkUtilities.Sleep(500);
         }
 
         internal void ClickCancelPreviousUser()
         {
             CancelPreviousUser.Click();
-            Thread.Sleep(1000);
+            FrameworkUtilities.Sleep(500);
         }
 
         internal void FillEmail(string email)
         {
             EmailTextBox.SendKeys(email);
-            Thread.Sleep(1000);
+            FrameworkUtilities.Sleep(500);
         }
 
         internal void ClickNextButton()
         {
             NextButton.Click();
-            Thread.Sleep(1000);
+            FrameworkUtilities.Sleep(500);
         }
 
         internal void FillUsername(string username)
         {
             UsernameTextbox.SendKeys(username);
-            Thread.Sleep(1000);
+            FrameworkUtilities.Sleep(500);
         }
 
         internal void FillPassword(string password)
         {
             PasswordTextBox.SendKeys(password);
-            Thread.Sleep(1000);
+            FrameworkUtilities.Sleep(500);
         }
 
         internal void ClickCreateUser()
         {
             CreateUser.Click();
-            Thread.Sleep(1000);
+            FrameworkUtilities.Sleep(500);
         }
 
         internal void ClickSignIn()
         {
             SignIn.Click();
-            Thread.Sleep(1000);
+            FrameworkUtilities.Sleep(500);
         }
 
         internal bool IsSignInWithEmailExist()

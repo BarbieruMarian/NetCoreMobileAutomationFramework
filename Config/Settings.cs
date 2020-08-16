@@ -9,5 +9,6 @@
         public static string AppActivity { get; set; }
         public static string AuthSecret { get; set; }
         public static string BasePath { get; set; }
+        public static int ThreadSleepMultiplicator { get; set; }
     }
 }
