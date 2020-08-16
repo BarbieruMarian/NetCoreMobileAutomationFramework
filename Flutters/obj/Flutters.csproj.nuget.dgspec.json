@@ -1,26 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Programming\\NetCoreMobileAutomation\\try\\NetCoreMobileAutomationFramework\\Flutters\\Flutters.csproj": {}
+    "D:\\Automation\\NetCoreMobileAutomationFramework\\Flutters\\Flutters.csproj": {}
   },
   "projects": {
-    "F:\\Programming\\NetCoreMobileAutomation\\try\\NetCoreMobileAutomationFramework\\AppiumFramework.csproj": {
+    "D:\\Automation\\NetCoreMobileAutomationFramework\\AppiumFramework.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Programming\\NetCoreMobileAutomation\\try\\NetCoreMobileAutomationFramework\\AppiumFramework.csproj",
+        "projectUniqueName": "D:\\Automation\\NetCoreMobileAutomationFramework\\AppiumFramework.csproj",
         "projectName": "AppiumFramework",
-        "projectPath": "F:\\Programming\\NetCoreMobileAutomation\\try\\NetCoreMobileAutomationFramework\\AppiumFramework.csproj",
-        "packagesPath": "C:\\Users\\barbi\\.nuget\\packages\\",
-        "outputPath": "F:\\Programming\\NetCoreMobileAutomation\\try\\NetCoreMobileAutomationFramework\\obj\\",
+        "projectPath": "D:\\Automation\\NetCoreMobileAutomationFramework\\AppiumFramework.csproj",
+        "packagesPath": "C:\\Users\\Laurentiu\\.nuget\\packages\\",
+        "outputPath": "D:\\Automation\\NetCoreMobileAutomationFramework\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\barbi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Laurentiu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -115,27 +110,22 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "F:\\Programming\\NetCoreMobileAutomation\\try\\NetCoreMobileAutomationFramework\\Flutters\\Flutters.csproj": {
+    "D:\\Automation\\NetCoreMobileAutomationFramework\\Flutters\\Flutters.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Programming\\NetCoreMobileAutomation\\try\\NetCoreMobileAutomationFramework\\Flutters\\Flutters.csproj",
+        "projectUniqueName": "D:\\Automation\\NetCoreMobileAutomationFramework\\Flutters\\Flutters.csproj",
         "projectName": "Flutters",
-        "projectPath": "F:\\Programming\\NetCoreMobileAutomation\\try\\NetCoreMobileAutomationFramework\\Flutters\\Flutters.csproj",
-        "packagesPath": "C:\\Users\\barbi\\.nuget\\packages\\",
-        "outputPath": "F:\\Programming\\NetCoreMobileAutomation\\try\\NetCoreMobileAutomationFramework\\Flutters\\obj\\",
+        "projectPath": "D:\\Automation\\NetCoreMobileAutomationFramework\\Flutters\\Flutters.csproj",
+        "packagesPath": "C:\\Users\\Laurentiu\\.nuget\\packages\\",
+        "outputPath": "D:\\Automation\\NetCoreMobileAutomationFramework\\Flutters\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\barbi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Laurentiu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -147,8 +137,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "F:\\Programming\\NetCoreMobileAutomation\\try\\NetCoreMobileAutomationFramework\\AppiumFramework.csproj": {
-                "projectPath": "F:\\Programming\\NetCoreMobileAutomation\\try\\NetCoreMobileAutomationFramework\\AppiumFramework.csproj"
+              "D:\\Automation\\NetCoreMobileAutomationFramework\\AppiumFramework.csproj": {
+                "projectPath": "D:\\Automation\\NetCoreMobileAutomationFramework\\AppiumFramework.csproj"
               }
             }
           }
@@ -218,7 +208,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

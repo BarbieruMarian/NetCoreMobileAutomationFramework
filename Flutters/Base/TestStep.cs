@@ -1,26 +1,39 @@
 ﻿using AppiumFramework.Utilities;
 using Flutters.Database.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Firebase.Database.Query;
+using Firebase.Database;
 using System.Threading.Tasks;
+using System.Threading;
+using Dynamitey.DynamicObjects;
+using System.Collections.Generic;
+using System.Collections;
 
 namespace Flutters.Base
 {
     public class TestStep : FirebaseExtension
     {
-        public int GetNumberOfPosts()
+        
+        public Post GetPostTable()
         {
-            Task<int> task = Task.Run<int>(async () => await GetNrPostsAsync());
+            Thread.Sleep(5000);
+            Task<Post> task = Task.Run<Post>(async () => await GetPostIdAsync());
             return task.Result;
         }
-        private async Task<int> GetNrPostsAsync()
+        private async Task<Post> GetPostIdAsync()
         {
+            Post post = new Post();
             var calls = await FirebaseClient
-                .Child("Posts")
+                .Child("Posts").OrderByKey().LimitToLast(1)
                 .OnceAsync<Post>();
 
-            return calls.Count;
+            foreach (var call in calls)
+            {
+
+                post = call.Object;
+            }
+
+            return post;
+            
         }
     }
 }

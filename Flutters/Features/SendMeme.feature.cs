@@ -133,7 +133,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("I click the POST button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 16
- testRunner.Then("the number of posts in Database Table Posts is incremented", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the postId in Database is different from previous one", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

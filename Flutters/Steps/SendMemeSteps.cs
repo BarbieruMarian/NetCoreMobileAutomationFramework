@@ -12,6 +12,7 @@ using TechTalk.SpecFlow;
 using Firebase.Database.Query;
 using NUnit.Framework;
 using AppiumFramework.Utilities;
+using System.Threading;
 
 namespace Flutters.Steps
 {
@@ -19,8 +20,11 @@ namespace Flutters.Steps
     public class SendMemeSteps : TestStep
     {
 
-        private int postCountBeforeTest { get; set; }
-        private int postCountAfterTest { get; set; }
+
+        private string postTitle { get; set; }
+        Post postBeforeSendingPicture = new Post();
+        Post postAfterSendingPicture = new Post();
+
         [When(@"I click the SEND MEME button")]
         public void WhenIClickTheSENDMEMEButton()
         {
@@ -31,8 +35,11 @@ namespace Flutters.Steps
         public void WhenIAddATitleAndAPhotoFromGallery()
         {
             PageFactory.Instance.CurrentPage.As<SendMemePage>().AddTitle();
+
+            postTitle = PageFactory.Instance.CurrentPage.As<SendMemePage>().myNumber;
+
             PageFactory.Instance.CurrentPage.As<SendMemePage>().AddPictureFromGallery();
-            postCountBeforeTest = GetNumberOfPosts();
+            postBeforeSendingPicture = GetPostTable();
         }
 
         [When(@"I click the POST button")]
@@ -41,12 +48,32 @@ namespace Flutters.Steps
             PageFactory.Instance.CurrentPage.As<SendMemePage>().ClickPostUploadButton();
         }
 
-        [Then(@"the number of posts in Database Table Posts is incremented")]
-        public  void ThenTheNumberOfPostsInDatabaseTablePostsIsIncremented()
+        [Then(@"the postId in Database is different from previous one")]
+        public  void ThenThePostIdInDatabaseIsDifferentFromPreviousOne()
         {
-            postCountAfterTest = GetNumberOfPosts();
-            if (postCountAfterTest == postCountBeforeTest + 1) { }
-            else Assert.Fail("The number of posts in DB Posts table was not incremented");
+
+            postAfterSendingPicture = GetPostTable();
+            
+            Thread.Sleep(1000);
+            if (postBeforeSendingPicture.PTitle!=postAfterSendingPicture.PTitle) 
+            { 
+                if(postBeforeSendingPicture.PId!=postAfterSendingPicture.PId)
+                {
+                    if(postAfterSendingPicture.PTitle==postTitle)
+                    {
+                       
+                    }
+                    else
+                    {
+                        Assert.Fail("The titles are different but the afterTitle it's not the same as sent title");
+                    }
+                }
+                else
+                {
+                    Assert.Fail("The title is the same for before and after but the post ids are the same");
+                }
+            }
+            else Assert.Fail("The postId it's not different from the previous one");
         }
     }
 }

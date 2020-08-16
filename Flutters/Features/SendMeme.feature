@@ -13,4 +13,4 @@ Scenario: SendMeme
 	When I click the SEND MEME button
 	And I add a title and a photo from gallery
 	And I click the POST button
-	Then the number of posts in Database Table Posts is incremented
+	Then the postId in Database is different from previous one
