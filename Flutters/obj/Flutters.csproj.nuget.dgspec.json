@@ -51,6 +51,10 @@
               "target": "Package",
               "version": "[2.0.4, )"
             },
+            "FirebaseDatabase.net": {
+              "target": "Package",
+              "version": "[4.0.4, )"
+            },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
               "version": "[3.1.7, )"
@@ -165,6 +169,10 @@
             "FireSharp": {
               "target": "Package",
               "version": "[2.0.4, )"
+            },
+            "FirebaseDatabase.net": {
+              "target": "Package",
+              "version": "[4.0.4, )"
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",

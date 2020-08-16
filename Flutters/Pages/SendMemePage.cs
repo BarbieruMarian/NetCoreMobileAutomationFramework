@@ -16,7 +16,6 @@ namespace Flutters.Pages
         AppiumWebElement AllowGalleryAccess => AppiumDriver.FindElementById("com.android.packageinstaller:id/permission_allow_button");
         AppiumWebElement CameraDownloadsSection => AppiumDriver.FindElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout[2]");
         ReadOnlyCollection<AppiumWebElement> DownloadPictures => AppiumDriver.FindElementsByClassName("android.view.ViewGroup");
-        AppiumWebElement StickymanPicture => AppiumDriver.FindElementByXPath("//android.view.ViewGroup[@content-desc=\"Photo taken on Aug 15, 2020 2:01:19 PM\"]");
         AppiumWebElement PostButton => AppiumDriver.FindElementById("com.RLD.newmemechat:id/pUploadBtn");
 
 
@@ -71,7 +70,5 @@ namespace Flutters.Pages
             Thread.Sleep(500);
             return firstPic;
         }
-
-
     }
 }

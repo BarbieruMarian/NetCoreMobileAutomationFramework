@@ -1,13 +1,17 @@
-﻿using System;
+﻿using AppiumFramework.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace Flutters.Database.Models
 {
-    public class Post
+    public class Post : FirebaseExtension
     {
         public List<Post> Posts;
-        public string PostId { get; set; }
+
+        public int PostCount { get; set; }
+        public static string PostId { get; set; }
         public string PDown { get; set; }
         public string PId { get; set; }
         public string PImage { get; set; }
@@ -22,5 +26,6 @@ namespace Flutters.Database.Models
         public string UEmail { get; set; }
         public string UName { get; set; }
         public string UId { get; set; }
+
     }
 }

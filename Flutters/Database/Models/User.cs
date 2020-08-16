@@ -6,7 +6,7 @@ using FireSharp.Response;
 
 namespace Flutters.Database.Models
 {
-    public class User : Firebase
+    public class User 
     {
         public List<User> Users { get; set; }
         public string UserId { get; set; }
@@ -17,13 +17,8 @@ namespace Flutters.Database.Models
         public string Typing { get; set; }
         public string Username { get; set; }
 
-        public void GetUsers()
-        {
-            FirebaseClient = new FireSharp.FirebaseClient(Config());
-            if (FirebaseClient != null)
-            {
-                var response = FirebaseClient.Get("Users/");
-            }
-        }
+
     }
+
+
 }
