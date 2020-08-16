@@ -4,22 +4,24 @@ using Firebase.Database.Query;
 using Firebase.Database;
 using System.Threading.Tasks;
 using System.Threading;
-using Dynamitey.DynamicObjects;
-using System.Collections.Generic;
-using System.Collections;
 
 namespace Flutters.Base
 {
     public class TestStep : FirebaseExtension
     {
-        
-        public Post GetPostTable()
+        public Post GetLastPostTable()
         {
             Thread.Sleep(5000);
-            Task<Post> task = Task.Run<Post>(async () => await GetPostIdAsync());
+            Task<Post> task = Task.Run<Post>(async () => await GetLastPostTableAsync());
             return task.Result;
         }
-        private async Task<Post> GetPostIdAsync()
+
+        public void DeleteLastPostTable(string id)
+        {
+            Thread.Sleep(10000);
+            Task task = Task.Run(async () => await DeleteLastPostTableAsync(id));
+        }
+        private async Task<Post> GetLastPostTableAsync()
         {
             Post post = new Post();
             var calls = await FirebaseClient
@@ -28,12 +30,16 @@ namespace Flutters.Base
 
             foreach (var call in calls)
             {
-
                 post = call.Object;
             }
-
             return post;
-            
+        }
+
+        private async Task DeleteLastPostTableAsync(string id)
+        {
+            await FirebaseClient
+                .Child("Posts").Child(id)
+                .DeleteAsync();
         }
     }
 }

@@ -1,8 +1,5 @@
 ﻿using AppiumFramework.Config;
 using Firebase.Database;
-using FireSharp.Config;
-using FireSharp.Interfaces;
-using FireSharp.Response;
 using System.Threading.Tasks;
 
 namespace AppiumFramework.Utilities

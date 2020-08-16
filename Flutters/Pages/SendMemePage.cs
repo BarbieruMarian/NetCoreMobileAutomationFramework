@@ -18,28 +18,21 @@ namespace Flutters.Pages
         AppiumWebElement CameraDownloadsSection => AppiumDriver.FindElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout[2]");
         ReadOnlyCollection<AppiumWebElement> DownloadPictures => AppiumDriver.FindElementsByClassName("android.view.ViewGroup");
         AppiumWebElement PostButton => AppiumDriver.FindElementById("com.RLD.newmemechat:id/pUploadBtn");
-        public string myNumber { get; set; }
-        public string postTitle()
-        {
-            myNumber= generateRandomNumber().ToString();
-            return "TestTitle" + myNumber;
-        }
-
-
-        public int generateRandomNumber()
-        {
-            Random rnd = new Random();
-            return rnd.Next(1,100);
-        }
-
-        
+        public string PostTitle { get; set; }
 
         public void AddTitle()
         {
             Thread.Sleep(2000);
             ParagraphTitle.Click();
             Thread.Sleep(500);
-            ParagraphTitle.SendKeys(postTitle());  
+            GenerateRandomPostTitle();
+            ParagraphTitle.SendKeys(PostTitle);  
+        }
+
+        public void GenerateRandomPostTitle()
+        {
+            var randomID = new Random().Next(1, 100);
+            PostTitle = "TestTitle" + randomID.ToString();
         }
 
         public void ClickSelectImage()
@@ -68,21 +61,19 @@ namespace Flutters.Pages
 
             Thread.Sleep(2000);
             ClickFirstImage();
-
-
         }
-
-
         public void ClickPostUploadButton()
         {
             PostButton.Click();
         }
+
         public void ClickFirstImage()
         {
             Thread.Sleep(1000);
             var firstImage = GetFirstImage();
             firstImage.Click();
         }
+
         public AppiumWebElement GetFirstImage()
         {
             Thread.Sleep(2000);
