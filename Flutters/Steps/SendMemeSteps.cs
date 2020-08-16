@@ -4,7 +4,6 @@ using Flutters.Database.Models;
 using Flutters.Pages;
 using TechTalk.SpecFlow;
 using NUnit.Framework;
-using System.Threading;
 
 namespace Flutters.Steps
 {

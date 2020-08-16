@@ -2,7 +2,6 @@
 using AppiumFramework.Utilities;
 using Flutters.Pages;
 using NUnit.Framework;
-using System.Threading;
 using TechTalk.SpecFlow;
 
 namespace Flutters.Steps
@@ -14,7 +13,7 @@ namespace Flutters.Steps
         public void ThenIClickTheSettingsTab()
         {
             PageFactory.Instance.CurrentPage = PageFactory.Instance.CurrentPage.As<HomePage>().GotoSettingsPage();
-            Assert.That(PageFactory.Instance.CurrentPage.As<SettingsPage>().IsSettingsPage, Is.True, "Sign out button was not found - you are probably not on the settings page");
+            Assert.That(PageFactory.Instance.CurrentPage.As<SettingsPage>().IsSettingsPage, Is.True, "You are not on the settings page");
         }
 
         [When(@"I keep changing the tabs many times")]
@@ -45,7 +44,7 @@ namespace Flutters.Steps
 
             PageFactory.Instance.CurrentPage = PageFactory.Instance.CurrentPage.As<SettingsPage>().GotoHomePage();
             FrameworkUtilities.Sleep(1500);
-            Assert.That(PageFactory.Instance.CurrentPage.As<HomePage>().IsHomePage, Is.True, "Hot button was not found - you are probably not on the home page");
+            Assert.That(PageFactory.Instance.CurrentPage.As<HomePage>().IsHomePage, Is.True, "You are not on the home page");
         }
     }
 }
