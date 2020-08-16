@@ -46,7 +46,7 @@ namespace Flutters.Steps
         {
             postCountAfterTest = GetNumberOfPosts();
             if (postCountAfterTest == postCountBeforeTest + 1) { }
-            else Assert.Fail("test failed");
+            else Assert.Fail("The number of posts in DB Posts table was not incremented");
         }
     }
 }
