@@ -108,14 +108,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
  testRunner.And("I choose Sign in with Email", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table3.AddRow(new string[] {
+                table4.AddRow(new string[] {
                             "testuser19@gmail.com",
                             "Parola1377"});
 #line 8
- testRunner.When("I enter the username and password as", ((string)(null)), table3, "When ");
+ testRunner.When("I enter the username and password as", ((string)(null)), table4, "When ");
 #line hidden
 #line 11
  testRunner.And("I click the Login Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

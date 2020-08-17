@@ -1,5 +1,9 @@
-﻿using Flutters.Base;
+﻿using AppiumFramework.Utilities;
+using Flutters.Base;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
+using System;
+using System.IO;
 
 namespace Flutters.Pages
 {
@@ -21,6 +25,22 @@ namespace Flutters.Pages
             return SettingsTab.Selected;
         }
 
+        public bool IsThemeChangedEnabled()
+        {
+            return !ThemeChange.Selected;
+        }
+
+        public void ToggleNightMode()
+        {
+            FrameworkUtilities.Sleep(500);
+            ThemeChange.Click();
+        }
+
+        public byte[] TakeScreenshot()
+        {
+            return AppiumDriver.GetScreenshot().AsByteArray;
+        }
 
     }
 }
+
