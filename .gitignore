@@ -7,6 +7,9 @@
 *.userosscache
 *.sln.docstates
 obj
+bin
+Flutters/obj
+Flutters/bin
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
