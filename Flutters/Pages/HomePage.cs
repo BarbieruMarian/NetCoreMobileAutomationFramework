@@ -44,8 +44,7 @@ namespace Flutters.Pages
 
         public bool IsHomePage()
         {
-            return Hot.Displayed;
-        
+            return HomeTab.Selected;
         }
     }
 }

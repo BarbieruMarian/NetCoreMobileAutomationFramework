@@ -19,6 +19,7 @@ namespace Flutters.Steps
         public void WhenIGoToSettingsPage()
         {
             PageFactory.Instance.CurrentPage = PageFactory.Instance.CurrentPage.As<HomePage>().GotoSettingsPage();
+            FrameworkUtilities.Sleep(1000);
             Assert.That(PageFactory.Instance.CurrentPage.As<SettingsPage>().IsSettingsPage, Is.True, "You are not on the settings page");
         }
 
