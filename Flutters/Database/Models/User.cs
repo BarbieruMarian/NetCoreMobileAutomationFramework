@@ -1,8 +1,5 @@
 ﻿using AppiumFramework.Utilities;
 using System.Collections.Generic;
-using FireSharp.Config;
-using FireSharp.Interfaces;
-using FireSharp.Response;
 
 namespace Flutters.Database.Models
 {
