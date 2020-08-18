@@ -4,6 +4,7 @@ using Flutters.Database.Models;
 using Flutters.Pages;
 using TechTalk.SpecFlow;
 using NUnit.Framework;
+using System.Diagnostics;
 
 namespace Flutters.Steps
 {
@@ -13,6 +14,8 @@ namespace Flutters.Steps
         private string postTitle { get; set; }
         Post postBeforeSendingPicture = new Post();
         Post postAfterSendingPicture = new Post();
+
+
 
         [When(@"I click the SEND MEME button")]
         public void WhenIClickTheSENDMEMEButton()
@@ -60,8 +63,17 @@ namespace Flutters.Steps
         [Then(@"I delete the last post genereted by this testrun and the corespondent image")]
         public void ThenIDeleteTheLastPostGeneretedByThisTestrunAndTheCorespondentImage()
         {
-            DeleteLastPostTable(postAfterSendingPicture.PId);
-        }
+            Process p = new Process();
+            p.StartInfo.FileName = "F:\\Programming\\NetCoreMobileAutomation\\RemoteFirebaseAccess\\index.exe";
+            p.StartInfo.Arguments = postAfterSendingPicture.PId;
+            p.Start();
+            p.WaitForExit();
 
+            var post = GetPostForId(postAfterSendingPicture.PId);
+            if (post != string.Empty)
+            {
+                Assert.Fail($"The post with ID {postAfterSendingPicture.PId} was not deleted");
+            }
+        }
     }
 }

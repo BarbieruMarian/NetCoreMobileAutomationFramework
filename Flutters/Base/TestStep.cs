@@ -9,6 +9,13 @@ namespace Flutters.Base
 {
     public class TestStep : FirebaseExtension
     {
+        public string GetPostForId(string id)
+        {
+            Thread.Sleep(5000);
+            Task<string> task = Task.Run<string>(async () => await GetPostForIdAsync(id));
+            return task.Result;
+        }
+
         public Post GetLastPostTable()
         {
             Thread.Sleep(5000);
@@ -33,6 +40,19 @@ namespace Flutters.Base
                 post = call.Object;
             }
             return post;
+        }
+
+        private async Task<string> GetPostForIdAsync(string id)
+        {
+            Post post = new Post();
+            dynamic calls = await FirebaseClient
+                .Child("Posts").Child(id)
+                .OnceAsync<object>();
+
+            var hardCodedNullChildCall = calls.ToString();
+            if (hardCodedNullChildCall == "Firebase.Database.FirebaseObject`1[System.Object][]")
+                return string.Empty;
+            return calls[1].Object;
         }
 
         private async Task DeleteLastPostTableAsync(string id)
