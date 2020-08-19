@@ -29,5 +29,8 @@ namespace AppiumFramework.Config
         public string BasePath { get; set; }
         [JsonProperty("threadSleepMultiplicator")]
         public int ThreadSleepMultiplicator { get; set; }
+
+        [JsonProperty("deletePostFromDatabaseScriptPath")]
+        public string DeletePostFromDatabaseScriptPath { get; set; }        
     }
 }

@@ -21,6 +21,7 @@ namespace AppiumFramework.Config
             Settings.AuthSecret = configurationRoot.GetSection(jsonSection).Get<TestSettings>().AuthSecret;
             Settings.BasePath = configurationRoot.GetSection(jsonSection).Get<TestSettings>().BasePath;
             Settings.ThreadSleepMultiplicator = configurationRoot.GetSection(jsonSection).Get<TestSettings>().ThreadSleepMultiplicator;
+            Settings.DeletePostFromDatabaseScriptPath = configurationRoot.GetSection(jsonSection).Get<TestSettings>().DeletePostFromDatabaseScriptPath;
         }
     }
 }

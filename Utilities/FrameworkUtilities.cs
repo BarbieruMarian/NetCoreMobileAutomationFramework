@@ -1,6 +1,7 @@
 ﻿using AppiumFramework.Config;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
@@ -15,6 +16,15 @@ namespace AppiumFramework.Utilities
         public static void Sleep(int miliseconds)
         {
             Thread.Sleep(miliseconds * Settings.ThreadSleepMultiplicator);
+        }
+
+        public static void ExecuteProcess(string filePath, string argument)
+        {
+            Process p = new Process();
+            p.StartInfo.FileName = filePath;
+            p.StartInfo.Arguments = argument;
+            p.Start();
+            p.WaitForExit();
         }
 
         public static float ImageBrightness(byte[] imageData)
