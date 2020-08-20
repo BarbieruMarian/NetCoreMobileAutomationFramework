@@ -9,6 +9,14 @@ namespace Flutters.Base
 {
     public class TestStep : FirebaseExtension
     {
+
+        public ChatMessage GetLastChatMessage()
+        {
+            Thread.Sleep(5000);
+            Task<ChatMessage> task = Task.Run<ChatMessage>(async () => await GetLastChatMessageAsync());
+            return task.Result;
+        }
+
         public string GetPostForId(string id)
         {
             Thread.Sleep(5000);
@@ -23,11 +31,6 @@ namespace Flutters.Base
             return task.Result;
         }
 
-        public void DeleteLastPostTable(string id)
-        {
-            Thread.Sleep(10000);
-            Task task = Task.Run(async () => await DeleteLastPostTableAsync(id));
-        }
         private async Task<Post> GetLastPostTableAsync()
         {
             Post post = new Post();
@@ -42,9 +45,23 @@ namespace Flutters.Base
             return post;
         }
 
+        private async Task<ChatMessage> GetLastChatMessageAsync()
+        {
+            var chatMessage = new ChatMessage();
+            var calls = await FirebaseClient
+                .Child("Chats").Child("022225557789ABDEFFHIIKLMNNOSTUWXXZbcekkllmotvvwwyyyzzzzz").OrderByKey().LimitToLast(1)
+                .OnceAsync<ChatMessage>();
+
+            foreach (var call in calls)
+            {
+                ;
+                chatMessage = call.Object;
+            }
+            return chatMessage;
+        }
+
         private async Task<string> GetPostForIdAsync(string id)
         {
-            Post post = new Post();
             dynamic calls = await FirebaseClient
                 .Child("Posts").Child(id)
                 .OnceAsync<object>();
@@ -53,13 +70,6 @@ namespace Flutters.Base
             if (hardCodedNullChildCall == "Firebase.Database.FirebaseObject`1[System.Object][]")
                 return string.Empty;
             return calls[1].Object;
-        }
-
-        private async Task DeleteLastPostTableAsync(string id)
-        {
-            await FirebaseClient
-                .Child("Posts").Child(id)
-                .DeleteAsync();
         }
     }
 }

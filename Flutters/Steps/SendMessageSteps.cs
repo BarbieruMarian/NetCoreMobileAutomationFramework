@@ -1,5 +1,6 @@
 ﻿using AppiumFramework.Base;
 using AppiumFramework.Utilities;
+using Flutters.Base;
 using Flutters.Pages;
 using NUnit.Framework;
 using System;
@@ -10,8 +11,9 @@ using TechTalk.SpecFlow;
 namespace Flutters.Steps
 {
     [Binding]
-    public class SendMessageSteps
+    public class SendMessageSteps : TestStep
     {
+        private string messageSendFromUI { get; set; }
         [Given(@"I go to the chats page")]
         public void GivenIGoToTheChatsPage()
         {
@@ -35,13 +37,16 @@ namespace Flutters.Steps
         [When(@"I send him a message")]
         public void WhenISendHimAMessage()
         {
-            PageFactory.Instance.CurrentPage.As<ChatPage>().TypeMessageInChatTextbox();
+            PageFactory.Instance.CurrentPage.As<ChatPage>().SendMessage();
+            messageSendFromUI = PageFactory.Instance.CurrentPage.As<ChatPage>().Message;
         }
 
         [Then(@"that user recives it and this can be proven by checking the database")]
         public void ThenThatUserRecivesItAndThisCanBeProvenByCheckingTheDatabase()
         {
-            
+            var databaseMessageInfo = GetLastChatMessage();
+            if (databaseMessageInfo.Message == messageSendFromUI) { }
+            else Assert.Fail($"Expected message: {messageSendFromUI} but database message is {databaseMessageInfo.Message}");
         }
 
     }
